@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+:root {
+  --main: hsl(259, 100%, 65%);
+  --error: hsl(0, 100%, 67%);
+  --white: #fff;
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smoke-grey: hsl(0, 1%, 44%);
+  --black: hsl(0, 0%, 8%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-grey);
+  padding: 0 20px;
+}
+
+main {
+  height: 650px;
+  width: 840px;
+  background-color: var(--white);
+  border-radius: 20px 20px 200px 20px;
+  padding: 50px 55px;
+}
+
+form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 32px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 52px;
+  position: relative;
+}
+
+.form-group label {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.form-group input {
+  padding: 8px 20px;
+  font-size: 32px;
+  font-weight: 700;
+  width: 160px;
+  border-radius: 12px;
+  border: 1px solid var(--light-grey);
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: var(--black);
+}
+
+.divider {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background-color: var(--light-grey);
+  margin-bottom: 50px;
+}
+
+.divider-icon {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  right: 0;
+  top: -50px;
+  border-radius: 50%;
+  background-color: var(--main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider-icon:hover {
+  transition: background-color 0.2s ease;
+  background-color: var(--black);
+  cursor: pointer;
+}
+
+.container {
+  font-style: italic;
+  font-size: 102px;
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+}
+
+.container p {
+  display: inline-block;
+  line-height: 1.12;
+}
+
+.container p span {
+  color: var(--main);
+}
+
+.sm-text {
+  position: absolute;
+  bottom: -25px;
+  display: none;
+  font-size: 14px;
+}
+
+.validity-error:not(.empty-error) .valid {
+  display: block;
+}
+
+.empty-error .empty {
+  display: block;
+}
+
+.empty-error,
+.validity-error {
+  color: var(--error);
+}
+
+.form-group.empty-error input,
+.form-group.validity-error input {
+  border: 1px solid var(--error);
+}
+
+.form-group.empty-error input:focus,
+.form-group.validity-error input:focus {
+  border-color: var(--error);
+}
+
+.date-error {
+  color: var(--error);
+  display: none;
+}
+
+@media (max-width: 790px) {
+  body {
+    padding: 0 15px;
+  }
+
+  main {
+    position: relative;
+    top: -20px;
+    max-width: 750px;
+    max-height: 485px;
+    padding: 45px 25px;
+    border-radius: 15px 15px 100px 15px;
+  }
+
+  form {
+    column-gap: 15px;
+    justify-content: center;
+  }
+
+  .form-group {
+    gap: 3px;
+    margin-bottom: 63px;
+  }
+
+  .form-group label {
+    font-size: 15px;
+  }
+
+  .form-group input {
+    padding: 13px 20px;
+    font-size: 18px;
+    width: 88px;
+  }
+
+  .divider {
+    margin-bottom: 52px;
+  }
+
+  .divider-icon {
+    height: 65px;
+    width: 65px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .container {
+    font-size: 50px;
+    max-width: 325px;
+    margin: 0 auto;
+  }
+
+  .container p {
+    line-height: 1.25;
+  }
+
+  .sm-text {
+    bottom: -25px;
+    font-size: 12px;
+    line-height: 1;
+  }
+}
